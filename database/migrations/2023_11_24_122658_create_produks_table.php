@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('Deskripsi');
             $table->integer('Harga');
             $table->integer('JumlahStock');
-            $table->integer('IDPemasok');
+            $table->integer('IDPemasok')->nullable();
             $table->timestamps();
         });
     }

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::controller(ProdukController::class)->group(function() {
+    Route::resource('/produk', ProdukController::class);
+    Route::get('/deleteproduk/{id}', [ProdukController::class, 'destroy'])->name('destroy');
+    Route::post('/updateproduk/{id}', [ProdukController::class, 'update'])->name('update');
+});
+
+Route::controller(TransaksiController::class)->group(function() {
+    Route::resource('/transaksi', TransaksiController::class);
+    Route::get('/showtransaksi/{id}', [TransaksiController::class, 'show'])->name('show');
 });
