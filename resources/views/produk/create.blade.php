@@ -9,13 +9,12 @@
       <div class="col-sm-6">
         <h1 class="m-0">{{ $title }}</h1>
       </div><!-- /.col -->
-      <!--<div class="col-sm-6">
+      <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-          <a class="btn btn-primary btn-block btn-sm">
-            <span>Tambah Data</span>
-          </a>
-        </ol>
-      </div> /.col -->
+          <li class="breadcrumb-item"><a href="/produk">Produk</a></li>
+          <li class="breadcrumb-item active">{{ $title}}</li>
+        </ol> 
+      </div>
     </div><!-- /.row -->
   </div><!-- /.container-fluid -->
 </div>

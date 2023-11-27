@@ -53,7 +53,11 @@ class ProdukController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $produks = Produk::find($id);
+        return response()->json([
+            'status' => 200,
+            'produks' => $produks
+        ]);
     }
 
     /**
@@ -64,7 +68,7 @@ class ProdukController extends Controller
         $produks = Produk::find($id);
         
         return view('produk.edit', [
-            'title' => 'Update Produk',
+            'title' => 'Edit Produk',
             'active' => 'produk',
             'produks' => $produks
         ]);

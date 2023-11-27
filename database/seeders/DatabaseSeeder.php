@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
 use App\Models\Produk;
+use App\Models\Pemasok;
+use App\Models\Pelanggan;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,11 +23,33 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         
+        
+        User::create([
+            'name' => 'Rois',
+            'username' => 'rois123',
+            'email' => 'rois@gmail.com',
+            'password' => bcrypt('rois123'),
+            'level_admin' => '1'
+        ]);
+        
         Produk::create([
             'NamaProduk' => 'Laptop',
             'Deskripsi' => 'Produk Lawas',
             'Harga' => '10000',
-            'JumlahStock' => '1',
+            'JumlahStock' => '6',
+            'pemasok_id' => '1',
         ]);
+
+        Produk::create([
+            'NamaProduk' => 'HP Grigi 5',
+            'Deskripsi' => 'Hp Gaming Katanya sih',
+            'Harga' => '7999999',
+            'JumlahStock' => '8',
+            'pemasok_id' => '2',
+        ]);
+
+        Pelanggan::factory(20)->create();
+        
+        Pemasok::factory(20)->create();
     }
 }

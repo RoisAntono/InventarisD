@@ -138,6 +138,7 @@
   $(function () {
     bsCustomFileInput.init();
   });
-  </script>
+</script>
+@yield('script')
 </body>
 </html>

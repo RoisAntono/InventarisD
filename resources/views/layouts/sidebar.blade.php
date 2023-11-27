@@ -57,13 +57,51 @@
           </p>
         </a>
       </li>
-      <li class="nav-item {{ ($active === "history") ? 'menu-open' : '' }}">
-        <a href="/history" class="nav-link">
+      <li class="nav-item {{ ($active === "pemasok") ? 'menu-open' : '' }} {{ ($active === "pelanggan") ? 'menu-open' : '' }}">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-solid fa-user"></i>
+          <p>
+            Data User
+            <i class="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="/pemasok" class="nav-link {{ ($active === "pemasok") ? 'active' : '' }}">
+              <i class="far {{ ($active === "pemasok") ? 'fa-dot-circle' : 'fa-circle' }} nav-icon"></i>
+              <p>Pemasok</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/pelanggan" class="nav-link {{ ($active === "pelanggan") ? 'active' : '' }}">
+              <i class="far {{ ($active === "pelanggan") ? 'fa-dot-circle' : 'fa-circle' }} nav-icon"></i>
+              <p>Pelanggan</p>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item {{ ($active === "p_history") ? 'menu-open' : '' }} {{ ($active === "t_history") ? 'menu-open' : '' }}">
+        <a href="#" class="nav-link">
           <i class="nav-icon fas fa-solid fa-chart-line"></i>
           <p>
             History
+            <i class="right fas fa-angle-left"></i>
           </p>
         </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="#" class="nav-link {{ ($active === "p_history") ? 'active' : '' }}">
+              <i class="far {{ ($active === "p_history") ? 'fa-dot-circle' : 'fa-circle' }} nav-icon"></i>
+              <p>Produk</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link {{ ($active === "t_history") ? 'active' : '' }}">
+              <i class="far {{ ($active === "t_history") ? 'fa-dot-circle' : 'fa-circle' }} nav-icon"></i>
+              <p>Transaksi</p>
+            </a>
+          </li>
+        </ul>
       </li>
     </ul>
   </nav>

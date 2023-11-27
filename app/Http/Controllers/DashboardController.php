@@ -3,22 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\Pemasok;
 use App\Models\Pelanggan;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class TransaksiController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('transaksi.index', [
-            'title' => 'Transaksi',
-            'active' => 'transaksi',
-            'transaksis' => Transaksi::all(),
+        $produk = Produk::count();
+        $transaksi = Transaksi::count();
+        $pelanggan = Pelanggan::count();
+        $pemasok = Pemasok::count();
+        return view('dashboard.index',compact('produk','transaksi','pelanggan','pemasok'), [ 
+            "title" => "Dashboard",
+            "active" => "dashboard"
         ]);
     }
 
@@ -27,12 +31,7 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        return view('transaksi.create', [
-            'title' => 'Tambah Transaksi',
-            'active' => 'transaksi',
-            'produks' => Produk::all(),
-            'pelanggans' => Pelanggan::all(),
-        ]);
+        //
     }
 
     /**
@@ -40,15 +39,7 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'Jumlah' => 'required|max:255',
-            'produk_id' => 'required',
-            'pelanggan_id' => 'required',
-        ]);
-
-        Transaksi::create($validatedData);
-
-        return redirect('/transaksi')->with('success', 'Data berhasil ditambahkan');
+        //
     }
 
     /**
@@ -56,12 +47,7 @@ class TransaksiController extends Controller
      */
     public function show(string $id)
     {
-        $transaksi = Transaksi::find($id);
-        return view('transaksi.show', [
-            'title' => 'Detail Transaksi',
-            'active' => 'transaksi',
-            'transaksi' => $transaksi
-        ]);
+        //
     }
 
     /**

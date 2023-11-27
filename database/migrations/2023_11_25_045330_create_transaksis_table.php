@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
             $table->string('Jumlah');
-            $table->string('IDProduk')->nullable();
-            $table->string('IDPelanggan')->nullable();
+            $table->foreignId('produk_id');
+            $table->foreignId('pelanggan_id');
             $table->timestamps();
         });
     }
