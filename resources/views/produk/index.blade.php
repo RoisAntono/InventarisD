@@ -20,7 +20,9 @@
   </div><!-- /.container-fluid -->
 </div>
 <!-- /.content-header -->
-
+  @if (session()->has('status'))
+      <div class="fade show swalDefaultSuccess" message="{{ session('status') }}"></div>
+  @endif
     <div class="card">
       <!-- /.card-header -->
       <div class="card-body">
@@ -59,7 +61,7 @@
                   <i class="fas fa-search"></i>
               </button>
               <a href="/produk/{{ $produk->id }}/edit" class="btn btn-outline-primary"><i class="fas fa-edit"></i></a>
-              <a href="/deleteproduk/{{ $produk->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
+              <a href="/deleteproduk/{{ $produk->id }}" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
           @endforeach
@@ -92,7 +94,7 @@
           <div class="modal-body">
             <address>
               <h4><strong><span id="namapemasok"></span></strong></h4>
-              <span hidden id="produkid"></span>
+              <span id="produkid"></span>
 
               Alamat : <span id="alamat"></span><br>
               Phone : <span id="nomortelepon"></span></span><br>
@@ -105,9 +107,59 @@
       <!-- /.modal-dialog -->
     </div>
 
+    <div class="modal fade" id="hapusproduk">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Hapus Produk</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="">
+          <div class="modal-body">
+            <strong><span id="produkid"></span></strong>
+            <p>Yakin ingin menghapus produk <strong><span id="namaproduk"></span></strong>&hellip;</p>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">Confirm</button>
+          </div>
+          </form>
+          
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    
 @endsection
 
 @section('script')
+
+<script>
+  $(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'bottom-end',
+      showConfirmButton: false,
+      timer: 5000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+  }
+    });
+
+    $('.swalDefaultSuccess').show(function() {
+      var message = $(this).attr('message');
+      Toast.fire({
+        icon: 'success',
+        title: "&nbsp;&nbsp;" + message
+      })
+    });
+  });
+</script>
 <script>
 $(document).ready( function() {
   $(document).on('click','.detail', function()
@@ -137,6 +189,19 @@ $(document).ready( function() {
   // });
 });
 </script>
+<script>
+  $(document).ready( function() {
+    $(document).on('click','.hapus', function()
+    {
+      var produkid = $(this).attr('produkid');
+      var namaproduk = $(this).attr('namaproduk');
+      // alert(produkid);
+      $('#hapusproduk').modal('show');
+      $('#produkid').text(produkid);
+      $('#namaproduk').text(namaproduk);
+    })
+  });
+  </script>
 {{-- <script>
   $(document).ready( function() {
     $(document).on('click','detail', function()

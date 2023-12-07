@@ -23,6 +23,10 @@
   <link rel="stylesheet" href="{{asset("plugins/overlayScrollbars/css/OverlayScrollbars.min.css")}}">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{asset("plugins/daterangepicker/daterangepicker.css")}}">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="{{asset("plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css")}}">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="{{asset("plugins/toastr/toastr.min.css")}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset("plugins/summernote/summernote-bs4.min.css")}}">
   <!-- DataTables -->
@@ -102,6 +106,10 @@
 <script src="{{asset("dist/js/demo.js")}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset("dist/js/pages/dashboard.js")}}"></script>
+<!-- SweetAlert2 -->
+<script src="{{asset("plugins/sweetalert2/sweetalert2.min.js")}}"></script>
+<!-- Toastr -->
+<script src="{{asset("plugins/toastr/toastr.min.js")}}"></script>
 <!-- bs-custom-file-input -->
 <script src="{{asset("plugins/bs-custom-file-input/bs-custom-file-input.min.js")}}"></script>
 <!-- DataTables  & Plugins -->
