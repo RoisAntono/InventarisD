@@ -70,14 +70,14 @@
     <!-- small box -->
     <div class="small-box bg-danger">
       <div class="inner">
-        <h3>{{ $pemasok }}</h3>
+        <h3>{{ $kategori }}</h3>
 
-        <p>Total Pemasok</p>
+        <p>Total Kategori</p>
       </div>
       <div class="icon">
-        <i class="ion ion-person-add"></i>
+        <i class="ion ion-filing"></i>
       </div>
-      <a href="/pemasok" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+      <a href="/kategori" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
     </div>
   </div>
   <!-- ./col -->
