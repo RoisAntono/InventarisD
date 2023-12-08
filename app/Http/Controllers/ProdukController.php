@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -28,6 +29,7 @@ class ProdukController extends Controller
         return view('produk.create', [
             'title' => 'Tambah Produk',
             'active' => 'produk',
+            'kategoris' => Kategori::all(),
         ]);
     }
 
@@ -38,6 +40,7 @@ class ProdukController extends Controller
     {
         $validatedData = $request->validate([
             'NamaProduk' => 'required|max:255',
+            'kategori_id' => 'required|max:255',
             'Deskripsi' => 'required|max:255',
             'Harga' => 'required|max:255',
             'JumlahStock' => 'required|max:255'
@@ -70,7 +73,8 @@ class ProdukController extends Controller
         return view('produk.edit', [
             'title' => 'Edit Produk',
             'active' => 'produk',
-            'produks' => $produks
+            'produks' => $produks,
+            'kategoris' => Kategori::all(),
         ]);
     }
 
@@ -82,6 +86,7 @@ class ProdukController extends Controller
         $produks = Produk::find($id);
         $rules = [
             'NamaProduk' => 'required|max:255',
+            'kategori_id' => 'required|max:255',
             'Deskripsi' => 'required|max:255',
             'Harga' => 'required|max:255',
             'JumlahStock' => 'required|max:255'

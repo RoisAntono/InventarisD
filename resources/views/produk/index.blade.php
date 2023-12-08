@@ -2,141 +2,123 @@
 
 @section('content')
     
-<!-- Content Header (Page header) -->
+<!-- Content Header -->
 <div class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
         <h1 class="m-0">{{ $title }}</h1>
-      </div><!-- /.col -->
+      </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <a href="/produk/create" class="btn btn-primary btn-block btn-sm">
             <span>Tambah Data</span>
           </a>
         </ol>
-      </div><!-- /.col -->
-    </div><!-- /.row -->
-  </div><!-- /.container-fluid -->
+      </div>
+    </div>
+  </div>
 </div>
-<!-- /.content-header -->
-  @if (session()->has('status'))
-      <div class="fade show swalDefaultSuccess" message="{{ session('status') }}"></div>
-  @endif
-    <div class="card">
-      <!-- /.card-header -->
-      <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
-          <tr>
-            <th>No</th>
-            <th>Nama</th>
-            <th>Deskripsi</th>
-            <th>Harga</th>
-            <th>Stock</th>
-            <th>Pemasok</th>
-            <th>Action</th>
-          </tr>
-          </thead>
-          <tbody>
-          @php
-            $no = 1;
-          @endphp
-          @foreach ($produks as $produk)
-          <tr>
-            <td scope="row">{{ $no++ }}</td>
-            <td>{{$produk->NamaProduk}}</td>
-            <td>{{$produk->Deskripsi}}</td>
-            <td>Rp. {{$produk->Harga}}</td>
-            <td>{{$produk->JumlahStock}}</td>
-            <td>{{$produk->pemasok->NamaPemasok}}</td>
-            <td>
-              <button type="button" class="btn btn-outline-success detail" 
-              produkid="{{ $produk->id }}" 
-              namapemasok="{{$produk->pemasok->NamaPemasok}}"
-              alamat="{{$produk->pemasok->Alamat}}"
-              nomortelepon="{{$produk->pemasok->NomorTelepon}}"
-              email="{{$produk->pemasok->Email}}"
-              >
-                  <i class="fas fa-search"></i>
-              </button>
-              <a href="/produk/{{ $produk->id }}/edit" class="btn btn-outline-primary"><i class="fas fa-edit"></i></a>
-              <a href="/deleteproduk/{{ $produk->id }}" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
-            </td>
-          </tr>
-          @endforeach
-          </tbody>
-          <tfoot>
-          <tr>
-            <th>No</th>
-            <th>Nama</th>
-            <th>Deskripsi</th>
-            <th>Harga</th>
-            <th>Stock</th>
-            <th>Pemasok</th>
-            <th>Action</th>
-          </tr>
-          </tfoot>
-        </table>
-      </div>
-      <!-- /.card-body -->
-    </div>
 
-    <div class="modal fade" id="detailpemasok">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Detail Pemasok</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <address>
-              <h4><strong><span id="namapemasok"></span></strong></h4>
-              <span id="produkid"></span>
+<!-- Alert -->
+@if (session()->has('status'))
+    <div class="fade show swalDefaultSuccess" message="{{ session('status') }}"></div>
+@endif
 
-              Alamat : <span id="alamat"></span><br>
-              Phone : <span id="nomortelepon"></span></span><br>
-              Email : <span id="email"></span></span>
-            </address>
-          </div>
-        </div>
-        <!-- /.modal-content -->
-      </div>
-      <!-- /.modal-dialog -->
-    </div>
+<!-- Table -->
+<div class="card">
+  <div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Kategori</th>
+        <th>Deskripsi</th>
+        <th>Harga</th>
+        <th>Stock</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      @php
+        $no = 1;
+      @endphp
+      @foreach ($produks as $produk)
+      <tr>
+        <td scope="row">{{ $no++ }}</td>
+        <td>{{$produk->NamaProduk}}</td>
 
-    <div class="modal fade" id="hapusproduk">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Hapus Produk</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form action="">
-          <div class="modal-body">
-            <strong><span id="produkid"></span></strong>
-            <p>Yakin ingin menghapus produk <strong><span id="namaproduk"></span></strong>&hellip;</p>
-          </div>
-          <div class="modal-footer justify-content-between">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-            <button type="submit" class="btn btn-primary">Confirm</button>
-          </div>
-          </form>
-          
-        </div>
-        <!-- /.modal-content -->
+        <!-- Kategori Selection -->
+        @if ($produk->kategori)
+          <td>{{$produk->kategori->NamaKategori}}</td>
+        @else
+          <td>Tidak Memiliki Kategori</td>
+        @endif
+        
+        <td>{{$produk->Deskripsi}}</td>
+        <td>Rp. {{$produk->Harga}}</td>
+        <td>{{$produk->JumlahStock}}</td>
+        <td>
+          {{-- <!-- <button type="button" class="btn btn-outline-success detail" 
+          produkid="{{ $produk->id }}" 
+          namapemasok="{{$produk->pemasok->NamaPemasok}}"
+          alamat="{{$produk->pemasok->Alamat}}"
+          nomortelepon="{{$produk->pemasok->NomorTelepon}}"
+          email="{{$produk->pemasok->Email}}"
+          >
+              <i class="fas fa-search"></i>
+          </button> --> --}}
+          <a href="/produk/{{ $produk->id }}/edit" class="btn btn-outline-primary"><i class="fas fa-edit"></i></a>
+          <a href="/deleteproduk/{{ $produk->id }}" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
+        </td>
+      </tr>
+      @endforeach
+      </tbody>
+      <tfoot>
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Kategori</th>
+        <th>Deskripsi</th>
+        <th>Harga</th>
+        <th>Stock</th>
+        <th>Action</th>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+
+<!-- Modal Detail -->
+<div class="modal fade" id="detailpemasok">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Detail Pemasok</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <!-- /.modal-dialog -->
+      <div class="modal-body">
+        <address>
+          <h4><strong><span id="namapemasok"></span></strong></h4>
+          <span id="produkid"></span>
+
+          Alamat : <span id="alamat"></span><br>
+          Phone : <span id="nomortelepon"></span></span><br>
+          Email : <span id="email"></span></span>
+        </address>
+      </div>
     </div>
+  </div>
+</div>
     
 @endsection
 
 @section('script')
 
+<!-- Script Alert -->
 <script>
   $(function() {
     var Toast = Swal.mixin({
@@ -160,6 +142,8 @@
     });
   });
 </script>
+
+<!-- Script Modal -->
 <script>
 $(document).ready( function() {
   $(document).on('click','.detail', function()
@@ -189,20 +173,7 @@ $(document).ready( function() {
   // });
 });
 </script>
-<script>
-  $(document).ready( function() {
-    $(document).on('click','.hapus', function()
-    {
-      var produkid = $(this).attr('produkid');
-      var namaproduk = $(this).attr('namaproduk');
-      // alert(produkid);
-      $('#hapusproduk').modal('show');
-      $('#produkid').text(produkid);
-      $('#namaproduk').text(namaproduk);
-    })
-  });
-  </script>
-{{-- <script>
+<!-- <script>
   $(document).ready( function() {
     $(document).on('click','detail', function()
     {
@@ -218,5 +189,5 @@ $(document).ready( function() {
       $('#email').text(email);
     })
   })
-</script> --}}
+</script> -->
 @endsection

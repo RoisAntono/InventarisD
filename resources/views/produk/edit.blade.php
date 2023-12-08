@@ -28,6 +28,18 @@
         <label for="exampleInputEmail1">Nama Produk</label>
         <input type="text" name="NamaProduk" class="form-control" id="NamaProduk" placeholder="Nama Produk" value="{{ old('NamaProduk', $produks->NamaProduk ) }}">
       </div>
+      <div class="form-group" data-select2-id="101">
+        <label>Kategori</label>
+        <select class="form-control select2bs4 select2-hidden-accessible" name="kategori_id" style="width: 100%;" data-select2-id="17" tabindex="-1" aria-hidden="true">
+          @foreach ($kategoris as $kategori)
+            @if(old('kategori_id', $produks->kategori_id) == $kategori->id)
+              <option selected="selected" data-select2-id="19" value="{{ $kategori->id }}" selected>{{ $kategori->NamaKategori }}</option>
+            @else
+              <option data-select2-id="103" value="{{ $kategori->id }}">{{ $kategori->NamaKategori }}</option>
+            @endif
+          @endforeach
+        </select>
+      </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Deskripsi</label>
         <input type="text" name="Deskripsi" class="form-control" id="Deskripsi" placeholder="Deskripsi" value="{{ old('Deskripsi', $produks->Deskripsi ) }}">

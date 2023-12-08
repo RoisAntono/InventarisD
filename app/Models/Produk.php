@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Pemasok;
+use App\Models\Kategori;
 use App\Models\Transaksi;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,9 +14,9 @@ class Produk extends Model
     protected $guarded = ['id'];
 
     //Relasi tabel Pemasok
-    public function pemasok()
+    public function kategori()
     {
-        return $this->belongsTo(Pemasok::class);
+        return $this->belongsTo(Kategori::class);
     }
 
     //Relasi tabel Transaksi
