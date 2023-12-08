@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Produk;
 use App\Models\Pemasok;
+use App\Models\Kategori;
 use App\Models\Pelanggan;
 use Illuminate\Database\Seeder;
 
@@ -37,7 +38,7 @@ class DatabaseSeeder extends Seeder
             'Deskripsi' => 'Produk Lawas',
             'Harga' => '10000',
             'JumlahStock' => '6',
-            'pemasok_id' => '1',
+            'kategori_id' => '1',
         ]);
 
         Produk::create([
@@ -45,11 +46,12 @@ class DatabaseSeeder extends Seeder
             'Deskripsi' => 'Hp Gaming Katanya sih',
             'Harga' => '7999999',
             'JumlahStock' => '8',
-            'pemasok_id' => '2',
+            'kategori_id' => '2',
         ]);
 
         Pelanggan::factory(20)->create();
         
-        Pemasok::factory(20)->create();
+        Kategori::factory(20)->create();
+        
     }
 }

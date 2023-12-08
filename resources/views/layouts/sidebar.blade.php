@@ -57,28 +57,21 @@
           </p>
         </a>
       </li>
-      <li class="nav-item {{ ($active === "pemasok") ? 'menu-open' : '' }} {{ ($active === "pelanggan") ? 'menu-open' : '' }}">
-        <a href="#" class="nav-link">
+      <li class="nav-item {{ ($active === "pelanggan") ? 'menu-open' : '' }}">
+        <a href="/pelanggan" class="nav-link">
           <i class="nav-icon fas fa-solid fa-user"></i>
           <p>
-            Data User
-            <i class="right fas fa-angle-left"></i>
+            Pelanggan
           </p>
         </a>
-        <ul class="nav nav-treeview">
-          <li class="nav-item">
-            <a href="/pemasok" class="nav-link {{ ($active === "pemasok") ? 'active' : '' }}">
-              <i class="far {{ ($active === "pemasok") ? 'fa-dot-circle' : 'fa-circle' }} nav-icon"></i>
-              <p>Pemasok</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/pelanggan" class="nav-link {{ ($active === "pelanggan") ? 'active' : '' }}">
-              <i class="far {{ ($active === "pelanggan") ? 'fa-dot-circle' : 'fa-circle' }} nav-icon"></i>
-              <p>Pelanggan</p>
-            </a>
-          </li>
-        </ul>
+      </li>
+      <li class="nav-item {{ ($active === "kategori") ? 'menu-open' : '' }}">
+        <a href="/kategori" class="nav-link">
+          <i class="nav-icon fas fa-solid fa-list"></i>
+          <p>
+            Kategori
+          </p>
+        </a>
       </li>
       <li class="nav-item {{ ($active === "p_history") ? 'menu-open' : '' }} {{ ($active === "t_history") ? 'menu-open' : '' }}">
         <a href="#" class="nav-link">

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PemasokController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\TransaksiController;
@@ -47,10 +48,9 @@ Route::get('/', [LoginController::class, 'login'])->name('login');
         Route::post('/updatepelanggan/{id}', [PelangganController::class, 'update'])->name('update');
     });
 
-    Route::controller(PemasokController::class)->group(function() {
-        Route::resource('/pemasok', PemasokController::class);
-        Route::get('/deletepemasok/{id}', [PemasokController::class, 'destroy'])->name('destroy');
-        Route::post('/updatepemasok/{id}', [PemasokController::class, 'update'])->name('update');
+    Route::controller(KategoriController::class)->group(function() {
+        Route::resource('/kategori', KategoriController::class);
+        Route::get('/deletekategori/{id}', [KategoriController::class, 'destroy'])->name('destroy');
     });
 
     Route::controller(TransaksiController::class)->group(function() {
