@@ -107,7 +107,8 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset("dist/js/pages/dashboard.js")}}"></script>
 <!-- SweetAlert2 -->
-<script src="{{asset("plugins/sweetalert2/sweetalert2.min.js")}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Online Latest Update Version -->
+<script src="{{asset("plugins/sweetalert2/sweetalert2.min.js")}}"></script> <!-- Offline Old Version -->
 <!-- Toastr -->
 <script src="{{asset("plugins/toastr/toastr.min.js")}}"></script>
 <!-- bs-custom-file-input -->

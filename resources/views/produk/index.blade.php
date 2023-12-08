@@ -55,7 +55,7 @@
         @else
           <td>Tidak Memiliki Kategori</td>
         @endif
-        
+
         <td>{{$produk->Deskripsi}}</td>
         <td>Rp. {{$produk->Harga}}</td>
         <td>{{$produk->JumlahStock}}</td>
@@ -70,7 +70,8 @@
               <i class="fas fa-search"></i>
           </button> --> --}}
           <a href="/produk/{{ $produk->id }}/edit" class="btn btn-outline-primary"><i class="fas fa-edit"></i></a>
-          <a href="/deleteproduk/{{ $produk->id }}" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
+          {{-- <a href="/deleteproduk/{{ $produk->id }}" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a> --}}
+          <button type="button" class="btn btn-outline-danger delete" produkid="{{ $produk->id }}" namaproduk="{{ $produk->NamaProduk }}"><i class="fa fa-trash"></i></button>
         </td>
       </tr>
       @endforeach
@@ -120,27 +121,61 @@
 
 <!-- Script Alert -->
 <script>
-  $(function() {
-    var Toast = Swal.mixin({
-      toast: true,
-      position: 'bottom-end',
-      showConfirmButton: false,
-      timer: 5000,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer;
-        toast.onmouseleave = Swal.resumeTimer;
-  }
-    });
-
-    $('.swalDefaultSuccess').show(function() {
-      var message = $(this).attr('message');
-      Toast.fire({
-        icon: 'success',
-        title: "&nbsp;&nbsp;" + message
-      })
-    });
+$(function() {
+  var Toast = Swal.mixin({
+    toast: true,
+    position: 'bottom-end',
+    showConfirmButton: false,
+    timer: 5000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+}
   });
+
+  $('.swalDefaultSuccess').show(function() {
+    var message = $(this).attr('message');
+    Toast.fire({
+      icon: 'success',
+      title: "&nbsp;&nbsp;" + message
+    })
+  });
+});
+</script>
+
+<!-- Script Modal Hapus -->
+<script>
+$('.delete').click( function() {
+  var produk_id = $(this).attr('produkid');
+  var nama_produk = $(this).attr('namaproduk');
+  Swal.fire({
+    title: "Kamu Yakin?",
+    text: "Kamu akan menghapus produk "+nama_produk+"!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Ya, Hapus Saja!",
+    cancelButtonText: "Batal"
+  })
+  .then((result) => {
+    if (result.isConfirmed) {
+      window.location = "/deleteproduk/"+produk_id+""
+      // Swal.fire({
+      //   title: "Terhapus!",
+      //   text: "Produk kamu berhasil dihapus.",
+      //   icon: "success"
+      // });
+    } else {
+      Swal.fire({
+        title: "Dibatalkan",
+        text: "Produk kamu tetap aman :)",
+        icon: "error"
+      });
+    }
+  });
+});
 </script>
 
 <!-- Script Modal -->

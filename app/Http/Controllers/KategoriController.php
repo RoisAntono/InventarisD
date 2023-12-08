@@ -42,7 +42,7 @@ class KategoriController extends Controller
 
         Kategori::create($validatedData);
 
-        return redirect('/kategori')->with('status', 'Data Berhasil di Tambah');
+        return redirect('/kategori')->with('status', 'Data berhasil ditambah');
     }
 
     /**
@@ -77,6 +77,6 @@ class KategoriController extends Controller
         Kategori::destroy($id);
         // dd($id);
         
-        return redirect('/kategori')->with('status','Data Berhasil di Hapus');
+        return redirect('/kategori')->with('status','Data berhasil dihapus');
     }
 }
