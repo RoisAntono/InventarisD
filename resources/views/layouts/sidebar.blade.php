@@ -57,14 +57,6 @@
           </p>
         </a>
       </li>
-      <li class="nav-item {{ ($active === "pelanggan") ? 'menu-open' : '' }}">
-        <a href="/pelanggan" class="nav-link">
-          <i class="nav-icon fas fa-solid fa-user"></i>
-          <p>
-            Pelanggan
-          </p>
-        </a>
-      </li>
       <li class="nav-item {{ ($active === "kategori") ? 'menu-open' : '' }}">
         <a href="/kategori" class="nav-link">
           <i class="nav-icon fas fa-solid fa-list"></i>

@@ -28,8 +28,9 @@
           <thead>
           <tr>
             <th>No</th>
-            <th>Tanggal</th>
-            <th>Harga Total</th>
+            <th>Pelanggan</th>
+            <th>Tanggal Transaksi</th>
+            <th>Total Harga</th>
             <th>Action</th>
           </tr>
           </thead>
@@ -40,10 +41,9 @@
           @foreach($transaksis as $transaksi)
           <tr>
             <td scope="row">{{ $no++}}</td>
+            <td>{{ $transaksi->NamaPelanggan }}</td>
             <td>{{ $transaksi->created_at }}</td>
-            <td>
-                {{ $transaksi->produk->Harga }}
-            </td>
+            <td>@rupiah( $transaksi->produk->Harga )</td>
             <td>
               <a href="/transaksi/{{ $transaksi->id }}" class="btn btn-outline-success"><i class="fas fa-search"> Detail Transaksi</i></a>
             </td>
@@ -53,8 +53,9 @@
           <tfoot>
           <tr>
             <th>No</th>
-            <th>Tanggal</th>
-            <th>Harga Total</th>
+            <th>Pelanggan</th>
+            <th>Tanggal Transaksi</th>
+            <th>Total Harga</th>
             <th>Action</th>
           </tr>
           </tfoot>

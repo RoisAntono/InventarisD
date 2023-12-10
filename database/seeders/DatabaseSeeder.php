@@ -48,8 +48,6 @@ class DatabaseSeeder extends Seeder
             'JumlahStock' => '8',
             'kategori_id' => '2',
         ]);
-
-        Pelanggan::factory(20)->create();
         
         Kategori::factory(20)->create();
         

@@ -25,10 +25,4 @@ class Transaksi extends Model
     {
         return $this->belongsTo(Produk::class);
     }
-
-    //Relasi tabel Pelanggan
-    public function pelanggan()
-    {
-        return $this->belongsTo(Pelanggan::class);
-    }
 }

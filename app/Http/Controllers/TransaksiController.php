@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
-use App\Models\Pelanggan;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -30,8 +29,7 @@ class TransaksiController extends Controller
         return view('transaksi.create', [
             'title' => 'Tambah Transaksi',
             'active' => 'transaksi',
-            'produks' => Produk::all(),
-            'pelanggans' => Pelanggan::all(),
+            'produks' => Produk::all()
         ]);
     }
 
@@ -42,8 +40,11 @@ class TransaksiController extends Controller
     {
         $validatedData = $request->validate([
             'Jumlah' => 'required|max:255',
+            'NamaPelanggan' => 'required|max:255',
+            'AlamatPelanggan' => 'required|max:255',
+            'TeleponPelanggan' => 'required|max:255',
+            'EmailPelanggan' => 'required|max:255',
             'produk_id' => 'required',
-            'pelanggan_id' => 'required',
         ]);
 
         Transaksi::create($validatedData);

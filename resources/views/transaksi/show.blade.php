@@ -36,10 +36,10 @@
     <div class="col-sm-4 invoice-col">
       Dari
       <address>
-        <strong>{{ $transaksi->pelanggan->NamaPelanggan}}</strong><br>
-        {{ $transaksi->pelanggan->Alamat}}<br>
-        Phone : {{ $transaksi->pelanggan->NomorTelepon}}<br>
-        Email : {{ $transaksi->pelanggan->Email}}
+        <strong>{{ $transaksi->NamaPelanggan}}</strong><br>
+        {{ $transaksi->AlamatPelanggan}}<br>
+        Phone : {{ $transaksi->TeleponPelanggan}}<br>
+        Email : {{ $transaksi->EmailPelanggan}}
       </address>
     </div>
     <!-- /.col -->
@@ -61,7 +61,7 @@
         <tbody>
         <tr>
           <td>{{ $transaksi->produk->NamaProduk}}</td>
-          <td>Rp. {{ $transaksi->produk->Harga}}</td>
+          <td>@rupiah($transaksi->produk->Harga)</td>
           <td>{{ $transaksi->Jumlah}}</td>
           <td>Rp. 44.999.995</td>
         </tr>

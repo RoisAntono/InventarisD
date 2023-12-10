@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Produk;
 use App\Models\Kategori;
-use App\Models\Pelanggan;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -18,9 +17,8 @@ class DashboardController extends Controller
     {
         $produk = Produk::count();
         $transaksi = Transaksi::count();
-        $pelanggan = Pelanggan::count();
         $kategori = Kategori::count();
-        return view('dashboard.index',compact('produk','transaksi','pelanggan','kategori'), [ 
+        return view('dashboard.index',compact('produk','transaksi','kategori'), [ 
             "title" => "Dashboard",
             "active" => "dashboard"
         ]);

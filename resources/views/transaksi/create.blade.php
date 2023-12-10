@@ -36,17 +36,21 @@
           @endforeach
         </select>
       </div>
-      <div class="form-group" data-select2-id="101">
-        <label>Pelanggan</label>
-        <select class="form-control select2bs4 select2-hidden-accessible" name="pelanggan_id" style="width: 100%;" data-select2-id="17" tabindex="-1" aria-hidden="true">
-          @foreach ($pelanggans as $pelanggan)
-            @if(old('pelanggan_id') == $pelanggan->id)
-              <option selected="selected" value="{{ $pelanggan->id }}" selected>{{ $pelanggan->NamaPelanggan }}</option>
-            @else
-              <option value="{{ $pelanggan->id }}">{{ $pelanggan->NamaPelanggan }}</option>
-            @endif
-          @endforeach
-        </select>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Nama Pelanggan</label>
+        <input type="text" name="NamaPelanggan" class="form-control" id="NamaPelanggan" placeholder="Nama Lengkap">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Alamat Pelanggan</label>
+        <input type="text" name="AlamatPelanggan" class="form-control" id="AlamatPelanggan" placeholder="Alamat">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Telepon Pelanggan</label>
+        <input type="text" name="TeleponPelanggan" class="form-control" id="TeleponPelanggan" placeholder="08...">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Email Pelanggan</label>
+        <input type="text" name="EmailPelanggan" class="form-control" id="EmailPelanggan" placeholder="example@example.com">
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Jumlah</label>

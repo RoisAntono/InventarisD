@@ -14,8 +14,11 @@ return new class extends Migration
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
             $table->string('Jumlah');
+            $table->string('NamaPelanggan');
+            $table->string('AlamatPelanggan');
+            $table->string('TeleponPelanggan');
+            $table->string('EmailPelanggan');
             $table->foreignId('produk_id');
-            $table->foreignId('pelanggan_id');
             $table->timestamps();
         });
     }
