@@ -1,9 +1,8 @@
-# Single Produk Transaksi
+# Transaksi Single Produk
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)]()
 
-Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,
-AngularJS-powered HTML5 Markdown editor.
+TRASIPRO yaitu Transaksi Single Produk ini bertujuan untuk mengembangkan platform web e-commerce yang dirancang khusus untuk melakukan transaksi satu produk dalam satu kali pembelian. Sistem ini didesain dengan fokus pada kemudahan penggunaan dan efisiensi dalam proses transaksi, terutama untuk produk-produk yang ditujukan untuk penjualan tunggal.
 
 - [Laravel v10.35.0](https://laravel.com/)
 - [AdminLTE-3.1.0](https://adminlte.io/)
@@ -13,20 +12,18 @@ AngularJS-powered HTML5 Markdown editor.
 ## Features
 
 - Login 2 User -> Soon
-- CRUD Produk (Tambah, Update, Delete, Tampil)
+- CRUD Produk (Tambah,Tampil, Update, Delete)
 - Transaksi Single Produk
 - Detail Transaksi
 - History Log -> Soon
 
 ## Plugins
 
-Dillinger is currently extended with the following plugins.
-Instructions on how to use them in your own application are linked below.
+Trasipro saat ini memiliki beberapa plugin tambahan.
 
 | Plugin | README |
 | ------ | ------ |
 | Carbon | [https://carbon.nesbot.com/][PlDb] |
-| 123 | [https://carbon.nesbot.com/][PlDb] |
 
 ## Installation
 
@@ -38,16 +35,16 @@ To deploy this project run
 
 ## FAQ
 
-#### Question 1
+#### Apakah dapat saya gunakan untuk tugas saya?
 
-Answer 1
+Boleh, silahkan.
 
-#### Question 2
+#### Apakah dapat saya modifikasi?
 
-Answer 2
+Boleh.
 
 ## 🚀 About Me
-I'm a full stack developer...
+Full stack web developer
 
 ## Feedback
 
