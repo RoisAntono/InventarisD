@@ -20,6 +20,11 @@
 </div>
 <!-- /.content-header -->
 
+<!-- Alert -->
+@if (session()->has('status'))
+    <div class="fade show swalDefaultSuccess" message="{{ session('status') }}"></div>
+@endif
+
 <div class="card">
   <form class="" action="/transaksi" method="POST" enctype="multipart/form-data">
     @csrf
@@ -65,4 +70,31 @@
   </form>
 </div>
 
+@endsection
+
+@section('script')
+<!-- Script Alert -->
+<script>
+  $(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'bottom-end',
+      showConfirmButton: false,
+      timer: 5000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+  }
+    });
+  
+    $('.swalDefaultSuccess').show(function() {
+      var message = $(this).attr('message');
+      Toast.fire({
+        icon: 'success',
+        title: message
+      })
+    });
+  });
+  </script>
 @endsection

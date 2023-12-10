@@ -138,7 +138,7 @@ $(function() {
     var message = $(this).attr('message');
     Toast.fire({
       icon: 'success',
-      title: "&nbsp;&nbsp;" + message
+      title: message
     })
   });
 });

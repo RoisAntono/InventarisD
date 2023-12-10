@@ -47,6 +47,17 @@ class TransaksiController extends Controller
             'produk_id' => 'required',
         ]);
 
+        $stock = Produk::find($request->produk_id);
+
+        if($stock->JumlahStock < $request->Jumlah)
+        {
+            return redirect('/transaksi/create')->with('status', 'Mohon maaf, Stock produk tidak mencukupi');
+        }else
+        {
+            $stock->JumlahStock -= $request->Jumlah;
+            $stock->save();
+        }
+
         Transaksi::create($validatedData);
 
         return redirect('/transaksi')->with('success', 'Data berhasil ditambahkan');
