@@ -63,7 +63,7 @@
           <td>{{ $transaksi->produk->NamaProduk}}</td>
           <td>@rupiah($transaksi->produk->Harga)</td>
           <td>{{ $transaksi->Jumlah}}</td>
-          <td>Rp. 44.999.995</td>
+          <td>@rupiah($transaksi->produk->Harga * $transaksi->Jumlah)</td>
         </tr>
         </tbody>
       </table>

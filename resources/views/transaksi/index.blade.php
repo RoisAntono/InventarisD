@@ -48,7 +48,7 @@
         <td scope="row">{{ $no++}}</td>
         <td>{{ $transaksi->NamaPelanggan }}</td>
         <td>{{ $transaksi->created_at }}</td>
-        <td>@rupiah( $transaksi->produk->Harga )</td>
+        <td>@rupiah($transaksi->produk->Harga * $transaksi->Jumlah)</td>
         <td>
           <a href="/transaksi/{{ $transaksi->id }}" class="btn btn-outline-success"><i class="fas fa-search"> Detail Transaksi</i></a>
         </td>
