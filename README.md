@@ -30,7 +30,7 @@ Trasipro saat ini memiliki beberapa plugin tambahan.
 To deploy this project run
 
 ```bash
-  npm run deploy
+  git clone https://github.com/RoisAntono/Transaksi-Single-Produk.git
 ```
 
 ## FAQ
