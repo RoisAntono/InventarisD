@@ -60,7 +60,7 @@ Boleh, silahkan.
 
 Boleh.
 
-## Support
+<!--## Support
 
 <a href="https://www.buymeacoffee.com/roisantono" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
@@ -68,7 +68,7 @@ Boleh.
 
 <a href="https://saweria.co/RoisAntono" target="_blank" alt="Saweria">
     <img src="https://saweria.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcapy_happy.603c7293.svg&w=384&q=75" alt="Saweria" style="height: 41px !important;) !important;" >
-</a>
+</a>-->
 
 ## Feedback
 
