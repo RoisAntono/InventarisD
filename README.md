@@ -1,14 +1,12 @@
-# Transaksi Single Produk
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)]()
-
+Transaksi Single Produk
+============
 TRASIPRO yaitu Transaksi Single Produk ini bertujuan untuk mengembangkan platform web e-commerce yang dirancang khusus untuk melakukan transaksi satu produk dalam satu kali pembelian. Sistem ini didesain dengan fokus pada kemudahan penggunaan dan efisiensi dalam proses transaksi, terutama untuk produk-produk yang ditujukan untuk penjualan tunggal.
 
 - [Laravel v10.35.0](https://laravel.com/)
 - [AdminLTE-3.1.0](https://adminlte.io/)
 ## Authors
 
-- [@Rois Antono](https://www.github.com/RoisAntono)
+- [Rois Antono](https://www.github.com/RoisAntono)
 ## Features
 
 - Login 2 User -> Soon
@@ -36,7 +34,7 @@ Atau Download langsung
 ```bash
   https://github.com/RoisAntono/Transaksi-Single-Produk/archive/refs/heads/main.zip
 ```
-Extract here RAR bernama #### (env dan vendor.rar)
+Extract here RAR bernama ( **env dan vendor.rar** )
 
 Buat database dengan nama inventarisd kemudian lanjut ke terminal lakukan migrate
 ```bash
@@ -62,8 +60,15 @@ Boleh, silahkan.
 
 Boleh.
 
-## 🚀 About Me
-Full stack web developer
+## Support
+
+<a href="https://www.buymeacoffee.com/roisantono" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+<p>Atau</p> 
+
+<a href="https://saweria.co/RoisAntono" target="_blank" alt="Saweria">
+    <img src="https://saweria.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcapy_happy.603c7293.svg&w=384&q=75" alt="Saweria" style="height: 41px !important;) !important;" >
+</a>
 
 ## Feedback
 
@@ -97,3 +102,4 @@ MIT
    [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
    [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
    [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
+
