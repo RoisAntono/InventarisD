@@ -32,15 +32,11 @@ Instalasi dan Menjalankan project
 ```bash
   git clone https://github.com/RoisAntono/Transaksi-Single-Produk.git
 ```
-Atau
+Atau Download langsung
 ```bash
-  Download Langsung https://github.com/RoisAntono/Transaksi-Single-Produk/archive/refs/heads/main.zip
+  https://github.com/RoisAntono/Transaksi-Single-Produk/archive/refs/heads/main.zip
 ```
-
-Extract .Env dan Vendor
-```bash
-  Extract here RAR bernama (env dan vendor.rar)
-```
+Extract here RAR bernama (env dan vendor.rar)
 
 Buat database dengan nama inventarisd kemudian lanjut ke terminal lakukan migrate
 ```bash
@@ -50,7 +46,6 @@ untuk data seeder bisa lakukan command
 ```bash
   php artisan migrate:fresh --seed
 ```
-
 nyalakan server LARAVEL
 ```bash
   php artisan serve
