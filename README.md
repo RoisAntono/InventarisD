@@ -36,21 +36,21 @@ Atau Download langsung
 ```bash
   https://github.com/RoisAntono/Transaksi-Single-Produk/archive/refs/heads/main.zip
 ```
-Extract here RAR bernama (env dan vendor.rar)
+Extract here RAR bernama #### (env dan vendor.rar)
 
 Buat database dengan nama inventarisd kemudian lanjut ke terminal lakukan migrate
 ```bash
   php artisan migrate
 ```
-untuk data seeder bisa lakukan command
+Untuk data seeder bisa lakukan command
 ```bash
   php artisan migrate:fresh --seed
 ```
-nyalakan server LARAVEL
+Jalankan server LARAVEL
 ```bash
   php artisan serve
 ```
-Jalankan server dan buka boom, selesai.
+Buka melalui browser kalian dan boom, selesai
 
 ## FAQ
 
