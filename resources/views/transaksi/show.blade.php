@@ -25,7 +25,7 @@
   <div class="row">
     <div class="col-12">
       <h4>
-        <i class="fas fa-globe"></i> AdminLTE, Inc.
+        <i class="fas fa-globe"></i> TRASIPRO, Inc.
         <small class="float-right">Date: {{ $transaksi->created_at}}</small>
       </h4>
     </div>

@@ -24,16 +24,12 @@ use App\Http\Controllers\TransaksiController;
 //     return view('welcome');
 // });
 
-Route::get('/', [LoginController::class, 'login'])->name('login');
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
-// Route::middleware(['admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::resource('/dashboard', DashboardController::class);
-
-    Route::controller(LoginController::class)->group(function() {
-        Route::get('/', [LoginController::class, 'login'])->name('login');
-        Route::post('/', [LoginController::class, 'loginuser'])->name('loginuser');
-        Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-    });
 
     Route::controller(ProdukController::class)->group(function() {
         Route::resource('/produk', ProdukController::class);
@@ -57,7 +53,7 @@ Route::get('/', [LoginController::class, 'login'])->name('login');
         Route::resource('/transaksi', TransaksiController::class);
         Route::get('/showtransaksi/{id}', [TransaksiController::class, 'show'])->name('show');
     });
-// });
+});
 
 // Route::middleware(['auth'])->group(function () {
 
