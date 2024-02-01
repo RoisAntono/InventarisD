@@ -1,6 +1,6 @@
 Transaksi Single Produk
 ============
-TRASIPRO yaitu Transaksi Single Produk ini bertujuan untuk mengembangkan platform web e-commerce yang dirancang khusus untuk melakukan transaksi satu produk dalam satu kali pembelian. Sistem ini didesain dengan fokus pada kemudahan penggunaan dan efisiensi dalam proses transaksi, terutama untuk produk-produk yang ditujukan untuk penjualan tunggal.
+TRASIPRO yaitu Transaksi Single Produk, ini bertujuan untuk mengembangkan platform web e-commerce yang dirancang khusus untuk melakukan transaksi satu produk dalam satu kali pembelian. Sistem ini didesain dengan fokus pada kemudahan penggunaan dan efisiensi dalam proses transaksi, terutama untuk produk-produk yang ditujukan untuk penjualan tunggal.
 
 - [Laravel v10.35.0](https://laravel.com/)
 - [AdminLTE-3.1.0](https://adminlte.io/)
