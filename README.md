@@ -35,7 +35,15 @@ Atau Download langsung
   https://github.com/RoisAntono/Transaksi-Single-Produk/archive/refs/heads/main.zip
 ```
 Extract here RAR bernama ( **env dan vendor.rar** )
-
+Atau
+install composer untuk vendor
+```bash
+  composer install
+```
+copy .env.example kemudian rename jadi .env kemudian generate key
+```bash
+  php artisan key:generate
+```
 Buat database dengan nama inventarisd kemudian lanjut ke terminal lakukan migrate
 ```bash
   php artisan migrate
